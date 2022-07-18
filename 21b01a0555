@@ -1,0 +1,68 @@
+3a:
+a = [1 ,2 ,1 ,3 ,4 ,2 ,3 ,5 ,4 ,6]
+duplicate_items = set() 
+unique_items = []
+
+for x in a:
+   if x not in duplicate_items:
+       unique_items.append(x) 
+       duplicate_items.add(x) 
+print(duplicate_items) 
+3b:
+import numpy as np
+list1 = [1, 2,3,4]
+list2 = [5, 6,7,8]
+result = np.multiply(list1,list2) 
+print(result) 
+3c:
+my_list = [[1], [2,3],[4,5,6]]
+flat_list = []
+for i in my_list:
+   for j in i:
+       flat_list.append(j) 
+print(flat_list) 
+4a:
+rows = int(input("enter no of rows")) 
+for i in range(rows):
+  for j in range(i+1):
+     print("*",end = "")
+  print("\n")
+4b:
+def ismonotone(a):
+  n = len(a) 
+  if n == 1:
+     return True
+  else:
+     if all(a[i] >= a[i+1] for i in range(0,n-1) or a[i] <= a[i + 1] for i in range(0, n - 1)):
+           return True
+     else:
+          return False
+A = [6 ,5 ,4 ,3]
+print(ismonotone(A)) 
+b = [6 ,2 ,4, 2]
+print(ismonotone(b))
+8:
+lst=[[1,2,6],[1,3,4,5,7,8],[1,3,5,6,8,9],[1,5,7,11],[1,4,7,5,8,12]]
+nw_lst=[]
+q=[]
+nk=[]
+nr=[]
+dic={}
+for i in lst:
+  for j in i:
+    nw_lst.append(j)
+nw_lst.sort()   
+for i in nw_lst :
+ x=nw_lst.count(i)
+ dic.update({i:x})
+q=list(dic.values())
+q.sort()
+for i in range(8,11):
+ for k in dic.keys():
+  if (dic[k]==q[i]):
+   nk.append(k)
+   nr.append(q[i])
+   break
+print(nk[::-1])
+print(nr[::-1])
+
